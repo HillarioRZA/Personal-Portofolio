@@ -1,0 +1,151 @@
+[
+  {
+    "category": "ai",
+    "accent": "core",
+    "tierEn": "CORE MASTERY",
+    "tierId": "KEAHLIAN INTI",
+    "tags": [
+      "Native Multi-Agent",
+      "Agentic AI",
+      "Gen AI",
+      "Machine Learning",
+      "Data Science",
+      "MCP"
+    ],
+    "highlightedTags": [],
+    "en": {
+      "code": "AI RUNTIME",
+      "title": "Native AI & Multi-Agent Architecture",
+      "desc": "Designing zero-framework orchestration engines, probabilistic turn loops, Mixture-of-Agents topologies, and Chain-of-Verification guardrails from first principles."
+    },
+    "id": {
+      "code": "RUNTIME AI",
+      "title": "Arsitektur AI Native & Multi-Agent",
+      "desc": "Merancang mesin orkestrasi tanpa framework, turn loop probabilistik, topologi Mixture-of-Agents, serta lapisan verifikasi CoV dari prinsip dasar."
+    }
+  },
+  {
+    "category": "db",
+    "accent": "core",
+    "tierEn": "CORE MASTERY",
+    "tierId": "KEAHLIAN INTI",
+    "tags": [
+      "PostgreSQL",
+      "MongoDB",
+      "MySQL",
+      "SQLite",
+      "Schema Design",
+      "Atomic Leasing"
+    ],
+    "highlightedTags": [
+      "PostgreSQL",
+      "MongoDB",
+      "MySQL",
+      "SQLite"
+    ],
+    "en": {
+      "code": "DATA LAYER",
+      "title": "Relational & NoSQL Database Engineering",
+      "desc": "End-to-end data modeling, query & index optimization, transactional concurrency control, and hybrid persistent state layers for high-throughput AI and web workloads."
+    },
+    "id": {
+      "code": "LAPISAN DATA",
+      "title": "Rekayasa Database Relasional & NoSQL",
+      "desc": "Pemodelan data menyeluruh, optimasi query & indeks, kendali konkurensi transaksional, serta lapisan state persisten hibrida untuk beban kerja AI dan web."
+    }
+  },
+  {
+    "category": "backend",
+    "accent": "core",
+    "tierEn": "CORE MASTERY",
+    "tierId": "KEAHLIAN INTI",
+    "tags": [
+      "Python",
+      "JavaScript",
+      "Web Services",
+      "REST / API",
+      "BYOK Routing"
+    ],
+    "highlightedTags": [],
+    "en": {
+      "code": "BACKEND",
+      "title": "Core Languages & Backend Web Services",
+      "desc": "Production mastery in Python and JavaScript for building resilient APIs, asynchronous service pipelines, protocol bridges, and provider-agnostic AI gateways."
+    },
+    "id": {
+      "code": "BACKEND",
+      "title": "Bahasa Inti & Layanan Web Backend",
+      "desc": "Penguasaan mendalam di Python dan JavaScript untuk membangun API tangguh, pipeline layanan asinkron, bridge protokol, dan gateway AI agnostik provider."
+    }
+  },
+  {
+    "category": "backend",
+    "accent": "core",
+    "tierEn": "CORE MASTERY",
+    "tierId": "KEAHLIAN INTI",
+    "tags": [
+      "System Design",
+      "Manual Code Audit",
+      "Security Red-Teaming",
+      "Latency Profiling"
+    ],
+    "highlightedTags": [],
+    "en": {
+      "code": "SECURITY & AUDIT",
+      "title": "Architecture, Performance & Security Audit",
+      "desc": "Line-by-line manual auditing of complex and AI-accelerated codebases, empirical stress-testing, bottleneck profiling, and strict threat-boundary isolation."
+    },
+    "id": {
+      "code": "KEAMANAN & AUDIT",
+      "title": "Arsitektur, Performa & Audit Keamanan",
+      "desc": "Audit kode manual baris demi baris pada codebase kompleks maupun hasil akselerasi AI, uji beban empiris, profiling latensi, dan isolasi batas keamanan ketat."
+    }
+  },
+  {
+    "category": "cross",
+    "accent": "working",
+    "tierEn": "WORKING STACK",
+    "tierId": "STACK PENDUKUNG",
+    "tags": [
+      "Rust",
+      "Tauri",
+      "ONNX",
+      "FFT DSP",
+      "Local / VPS Deploy"
+    ],
+    "highlightedTags": [],
+    "en": {
+      "code": "NATIVE SYSTEMS",
+      "title": "Systems, Native Runtimes & Edge R&D",
+      "desc": "Working proficiency in Rust and Tauri for performance-critical desktop utilities, local ONNX inference graphs, cryptographic tooling, and cross-platform FFI bridges."
+    },
+    "id": {
+      "code": "SISTEM NATIVE",
+      "title": "Sistem Native & Riset Edge",
+      "desc": "Kemampuan kerja di Rust dan Tauri untuk utilitas desktop berperforma tinggi, graph inferensi ONNX lokal, perkakas kriptografi, serta bridge FFI lintas platform."
+    }
+  },
+  {
+    "category": "cross",
+    "accent": "working",
+    "tierEn": "WORKING STACK",
+    "tierId": "STACK PENDUKUNG",
+    "tags": [
+      "TypeScript",
+      "React",
+      "Flutter",
+      "PHP"
+    ],
+    "highlightedTags": [],
+    "en": {
+      "code": "INTERFACES",
+      "title": "Cross-Platform Interfaces & Web Stack",
+      "desc": "Versatile execution across TypeScript, React, Flutter, and PHP to ship interactive dashboards, mobile clients, and legacy backend integrations when projects demand it."
+    },
+    "id": {
+      "code": "ANTARMUKA",
+      "title": "Antarmuka Lintas Platform & Web",
+      "desc": "Eksekusi fleksibel di TypeScript, React, Flutter, dan PHP untuk membangun dashboard interaktif, klien mobile, hingga integrasi backend lintas ekosistem."
+    }
+  }
+]

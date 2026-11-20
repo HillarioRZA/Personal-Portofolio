@@ -1,0 +1,79 @@
+---
+slug: sonora
+order: 3
+category: dsp
+categoryLabel: AUDIO DSP ENGINE
+badge: v1.0.1
+badgeTone: emerald
+title: Sonora
+stack:
+  - Rust
+  - Flutter
+  - FFI Bridge
+  - SQLite
+  - FFT Signal Processing
+  - Lossless DSP
+cardTags:
+  - Rust
+  - Flutter
+  - SQLite
+  - FFT DSP
+en:
+  status: CROSS-PLATFORM AUDIO DSP • v1.0.1
+  cardDesc: >-
+    Offline-first, bit-accurate lossless audio player (up to 24-bit/192 kHz) for
+    Windows and Android. Powered by a custom Rust DSP core, 5-band equalizer,
+    and automated FFT spectrum validation to reject fake transcoded FLAC files.
+  cardNote: >-
+    Zero-stutter cross-platform FFI architecture with deterministic FFT
+    verification before SQLite ingestion.
+  summary: >-
+    An offline-first, bit-accurate lossless audio player (up to 24-bit/192 kHz)
+    for Windows and Android powered by a native Rust DSP engine and automated
+    spectrum authenticity checks.
+  decisions:
+    - >-
+      Isolated real-time audio decoding and 5-band parametric EQ inside a
+      lock-free Rust DSP core bridged to Flutter via FFI.
+    - >-
+      Implemented automated FFT high-frequency cutoff analysis during ingestion
+      to detect and quarantine fake upsampled MP3-to-FLAC files.
+    - >-
+      Indexed metadata and spectral audit flags inside an optimized local SQLite
+      schema for instant offline library queries.
+  audit: >-
+    Profiled under continuous 192 kHz playback on mobile and desktop targets to
+    guarantee zero buffer underruns and deterministic memory bounds across FFI
+    boundaries.
+  accessNote: PRODUCTION RELEASE // v1.0.1
+id:
+  status: DSP AUDIO LINTAS PLATFORM • v1.0.1
+  cardDesc: >-
+    Pemutar audio lossless offline-first bit-accurate (hingga 24-bit/192 kHz)
+    untuk Windows dan Android. Ditenagai inti DSP Rust kustom, equalizer 5-band,
+    dan validasi spektrum FFT otomatis penolak FLAC palsu.
+  cardNote: >-
+    Arsitektur FFI lintas platform tanpa stutter dengan verifikasi FFT
+    deterministik sebelum masuk SQLite.
+  summary: >-
+    Pemutar audio lossless offline-first bit-accurate (hingga 24-bit/192 kHz)
+    untuk Windows dan Android dengan inti DSP Rust native serta pemeriksa
+    keaslian spektrum otomatis.
+  decisions:
+    - >-
+      Mengisolasi decoding audio real-time dan equalizer 5-band di dalam inti
+      DSP Rust bebas-lock yang terhubung ke Flutter lewat FFI.
+    - >-
+      Menerapkan analisis cutoff frekuensi tinggi berbasis FFT saat ingesti
+      untuk mendeteksi dan menolak file FLAC palsu hasil transcode MP3.
+    - >-
+      Mengindeks metadata dan status audit spektrum di skema SQLite lokal
+      teroptimasi untuk pencarian pustaka instan secara offline.
+  audit: >-
+    Di-profiling pada pemutaran 192 kHz berkelanjutan di mobile dan desktop guna
+    memastikan nol buffer underrun serta batas memori deterministik di lintas
+    FFI.
+  accessNote: RILIS PRODUKSI // v1.0.1
+---
+
+Architecture brief for Sonora. The full case study renders from the frontmatter above; this body is reserved for long-form notes.

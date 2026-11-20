@@ -1,0 +1,57 @@
+{
+  "en": {
+    "headline1": "Architecture over syntax.",
+    "headline2": "Verification over hype.",
+    "intro": "Modern engineering isn't about typing boilerplate faster—it's about knowing what to build, why a design holds under pressure, and where it breaks.",
+    "pillars": [
+      {
+        "title": "Native Over Wrappers",
+        "desc": "Heavy AI frameworks hide critical execution paths behind fragile abstractions. I build core orchestration loops natively to retain full visibility over state, latency, and token economics."
+      },
+      {
+        "title": "Deterministic Governance",
+        "desc": "LLMs are probabilistic; production systems cannot be. I isolate probabilistic reasoning from deterministic runtime validation, atomic DB leasing, and strict security boundaries."
+      },
+      {
+        "title": "Audit-Driven Execution",
+        "desc": "Every system I ship undergoes manual line-by-line code auditing, architectural stress-testing, and empirical validation for performance bottlenecks and security gaps."
+      }
+    ]
+  },
+  "id": {
+    "headline1": "Arsitektur di atas sintaks.",
+    "headline2": "Verifikasi di atas tren.",
+    "intro": "Rekayasa perangkat lunak modern bukan soal siapa paling cepat mengetik boilerplate—melainkan memahami apa yang harus dibangun, mengapa desainnya kuat saat ditekan, dan di mana titik lemahnya.",
+    "pillars": [
+      {
+        "title": "Native di Atas Wrapper",
+        "desc": "Framework AI yang berat sering menyembunyikan alur eksekusi di balik abstraksi rapuh. Saya membangun loop orkestrasi secara native demi kendali penuh atas state, latensi, dan efisiensi token."
+      },
+      {
+        "title": "Tata Kelola Deterministik",
+        "desc": "LLM bersifat probabilistik, sedangkan sistem produksi tidak boleh menebak-nebak. Saya memisahkan penalaran model dari validasi runtime deterministik, leasing DB atomik, dan batas keamanan ketat."
+      },
+      {
+        "title": "Eksekusi Berbasis Audit",
+        "desc": "Setiap sistem melewati audit kode manual baris demi baris, pengujian tekanan arsitektur, serta validasi empiris terhadap hambatan performa dan celah keamanan."
+      }
+    ]
+  },
+  "pillarMeta": [
+    {
+      "code": "NATIVE CORE",
+      "footer": "ZERO-WRAPPER ORCHESTRATION",
+      "icon": "hexagon"
+    },
+    {
+      "code": "GOVERNANCE",
+      "footer": "BOUNDED RUNTIME CONTRACTS",
+      "icon": "shield"
+    },
+    {
+      "code": "VERIFICATION",
+      "footer": "MANUAL AUDIT & RED-TEAMING",
+      "icon": "code"
+    }
+  ]
+}

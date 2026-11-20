@@ -1,0 +1,380 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Design tokens, atmospheric layers & tactile effects.
+   Ported verbatim from the approved preview's <style> block. */
+
+:root {
+  --bg: #05060A;
+  --fg: #F4F4F7;
+  --muted: #9CA3AF;
+  --surface: rgba(255, 255, 255, 0.032);
+  --surface-hover: rgba(255, 255, 255, 0.068);
+  --border: rgba(255, 255, 255, 0.09);
+  --border-strong: rgba(56, 189, 248, 0.38);
+  --accent: #38BDF8;
+  --accent-2: #818CF8;
+  --accent-soft: rgba(56, 189, 248, 0.13);
+  --nav-bg: rgba(5, 6, 10, 0.74);
+  --btn-primary-bg: #F4F4F7;
+  --btn-primary-fg: #05060A;
+  --aurora-1: rgba(56, 189, 248, 0.14);
+  --aurora-2: rgba(99, 102, 241, 0.12);
+  --grid-line: rgba(255, 255, 255, 0.035);
+  --spotlight-color: rgba(56, 189, 248, 0.16);
+}
+
+html {
+  background-color: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-sans), 'Plus Jakarta Sans', sans-serif;
+  scroll-behavior: auto;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--fg);
+  overflow-x: clip;
+  min-height: 100vh;
+}
+
+::selection {
+  background-color: var(--accent);
+  color: #05060A;
+}
+
+/* =====================================================================
+   MULTI-LAYER ATMOSPHERIC BACKGROUND (AURORA + ARCHITECTURAL GRID + 3D)
+===================================================================== */
+#ambient-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.aurora-orb {
+  position: absolute;
+  border-radius: 9999px;
+  filter: blur(110px);
+  will-change: transform, opacity;
+  transition: background 0.8s ease;
+}
+
+#aurora-orb-1 {
+  width: min(68vw, 760px);
+  height: min(68vw, 760px);
+  top: -18%;
+  right: -12%;
+  background: radial-gradient(circle, var(--aurora-1) 0%, transparent 70%);
+  animation: floatOrb1 16s ease-in-out infinite alternate;
+}
+
+#aurora-orb-2 {
+  width: min(62vw, 680px);
+  height: min(62vw, 680px);
+  bottom: -20%;
+  left: -14%;
+  background: radial-gradient(circle, var(--aurora-2) 0%, transparent 70%);
+  animation: floatOrb2 20s ease-in-out infinite alternate;
+}
+
+@keyframes floatOrb1 {
+  0% { transform: translate3d(0, 0, 0) scale(1); }
+  100% { transform: translate3d(-45px, 35px, 0) scale(1.08); }
+}
+
+@keyframes floatOrb2 {
+  0% { transform: translate3d(0, 0, 0) scale(1); }
+  100% { transform: translate3d(55px, -35px, 0) scale(1.1); }
+}
+
+/* Architectural Micro-Grid Overlay */
+#micro-grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(to right, var(--grid-line) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--grid-line) 1px, transparent 1px);
+  background-size: 56px 56px;
+  mask-image: radial-gradient(ellipse 85% 75% at 50% 45%, black 25%, transparent 100%);
+  -webkit-mask-image: radial-gradient(ellipse 85% 75% at 50% 45%, black 25%, transparent 100%);
+}
+
+/* Global Fixed Three.js Canvas */
+#bg-canvas {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1;
+  pointer-events: none;
+  display: block;
+}
+
+/* =====================================================================
+   FLUID RESPONSIVE TYPOGRAPHY & KINETIC TEXT EFFECTS
+===================================================================== */
+.hero-display {
+  font-size: clamp(2.15rem, 5.4vw, 4.35rem);
+  line-height: 1.05;
+  letter-spacing: -0.035em;
+}
+
+.hero-role-display {
+  font-size: clamp(1.3rem, 3.6vw, 2.95rem);
+  line-height: 1.12;
+  letter-spacing: -0.025em;
+}
+
+.section-display {
+  font-size: clamp(1.85rem, 4.3vw, 3.35rem);
+  line-height: 1.08;
+  letter-spacing: -0.03em;
+}
+
+.gradient-ink {
+  background: linear-gradient(115deg, var(--fg) 25%, var(--accent) 72%, var(--accent-2) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.mask-line {
+  overflow: hidden;
+  display: block;
+}
+
+.mask-inner {
+  display: inline-block;
+  will-change: transform, opacity;
+}
+
+/* =====================================================================
+   TACTILE SPOTLIGHT + 3D TILT GLASS CARDS
+===================================================================== */
+.spotlight-card {
+  position: relative;
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  overflow: hidden;
+  transform-style: preserve-3d;
+  transition:
+    border-color 0.3s ease,
+    background-color 0.3s ease,
+    box-shadow 0.35s ease,
+    transform 0.22s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.spotlight-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    420px circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+    var(--spotlight-color),
+    transparent 65%
+  );
+  opacity: 0;
+  transition: opacity 0.35s ease;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.spotlight-card:hover::before {
+  opacity: 1;
+}
+
+.spotlight-card:hover {
+  border-color: var(--border-strong);
+  background-color: var(--surface-hover);
+  box-shadow: 0 20px 50px -24px rgba(56, 189, 248, 0.22);
+}
+
+.spotlight-card > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Pipeline Animated Signal Line */
+@keyframes flowDash {
+  to { stroke-dashoffset: -24; }
+}
+
+.pipeline-flow-line {
+  stroke-dasharray: 6 6;
+  animation: flowDash 1.15s linear infinite;
+}
+
+.pipeline-node {
+  transition: all 0.25s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.pipeline-node.is-active {
+  border-color: var(--accent);
+  background-color: var(--accent-soft);
+  box-shadow: 0 0 0 1px var(--accent), 0 12px 28px -12px rgba(56, 189, 248, 0.4);
+}
+
+/* Frameless 3D Architect Stage */
+#identity-3d-stage {
+  touch-action: pan-y;
+  cursor: grab;
+}
+
+#identity-3d-stage:active {
+  cursor: grabbing;
+}
+
+.stage-floor-glow {
+  background: radial-gradient(
+    ellipse 68% 42% at 50% 78%,
+    rgba(56, 189, 248, 0.19) 0%,
+    rgba(99, 102, 241, 0.11) 42%,
+    transparent 74%
+  );
+}
+
+/* Filter Pill Active State */
+.filter-pill {
+  transition: all 0.25s ease;
+}
+
+.filter-pill.is-active {
+  background-color: var(--btn-primary-bg);
+  color: var(--btn-primary-fg);
+  border-color: var(--btn-primary-bg);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: var(--border); border-radius: 9999px; }
+::-webkit-scrollbar-thumb:hover { background: var(--accent); }
+
+/* =====================================================================
+   DESKTOP CONTEXTUAL CUSTOM CURSOR (FINE POINTER ONLY)
+===================================================================== */
+@media (hover: hover) and (pointer: fine) {
+  body.custom-cursor-active,
+  body.custom-cursor-active a,
+  body.custom-cursor-active button,
+  body.custom-cursor-active [data-cursor] {
+    cursor: none !important;
+  }
+}
+
+#cursor-dot {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 7px;
+  height: 7px;
+  border-radius: 9999px;
+  background-color: var(--accent);
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: opacity 0.22s ease;
+}
+
+#cursor-pill {
+  position: fixed;
+  top: 0;
+  left: 0;
+  min-width: 34px;
+  height: 34px;
+  padding: 0;
+  border-radius: 9999px;
+  border: 1px solid var(--accent);
+  background-color: transparent;
+  color: #05060A;
+  pointer-events: none;
+  z-index: 9998;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition:
+    opacity 0.22s ease,
+    background-color 0.22s ease,
+    border-color 0.22s ease,
+    padding 0.22s cubic-bezier(0.22, 1, 0.36, 1),
+    height 0.22s cubic-bezier(0.22, 1, 0.36, 1);
+  white-space: nowrap;
+}
+
+#cursor-pill.is-labeled {
+  height: 32px;
+  padding: 0 14px;
+  background-color: var(--accent);
+  border-color: var(--accent);
+  box-shadow: 0 8px 28px rgba(56, 189, 248, 0.32);
+}
+
+#cursor-pill span {
+  font-family: var(--font-mono), 'JetBrains Mono', monospace;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  opacity: 0;
+  transition: opacity 0.14s ease;
+}
+
+#cursor-pill.is-labeled span {
+  opacity: 1;
+}
+
+/* Slide-Over Architecture Modal */
+#case-modal {
+  transition: opacity 0.3s ease;
+}
+#case-modal-panel {
+  transition: transform 0.42s cubic-bezier(0.22, 1, 0.36, 1);
+}
+#case-modal.is-open {
+  opacity: 1;
+  pointer-events: auto;
+}
+#case-modal.is-open #case-modal-panel {
+  transform: translateX(0);
+}
+
+/* Lenis recommended base styles */
+html.lenis, html.lenis body { height: auto; }
+.lenis.lenis-smooth { scroll-behavior: auto !important; }
+.lenis.lenis-stopped { overflow: hidden; }
+
+/* Reduced motion: disable continuous CSS animation; JS modules also check
+   matchMedia('(prefers-reduced-motion: reduce)') and skip Lenis smoothing,
+   role scramble intervals and GSAP offset transforms. */
+@media (prefers-reduced-motion: reduce) {
+  .aurora-orb { animation: none !important; }
+  .pipeline-flow-line { animation: none !important; }
+  *, *::before, *::after {
+    transition-duration: 0.01ms !important;
+  }
+}
+
+@layer base {
+  /* Affordance: enabled controls show a pointer; focus stays visible for
+     keyboard users in both themes. */
+  button:not(:disabled),
+  [role='button']:not([aria-disabled='true']) {
+    cursor: pointer;
+  }
+  button:disabled {
+    cursor: not-allowed;
+  }
+  :focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+  }
+}

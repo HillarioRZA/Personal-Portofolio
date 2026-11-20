@@ -1,0 +1,187 @@
+{
+  "name": "AstraeaADK",
+  "repo": "https://github.com/HillarioRZA/AstraeaADK",
+  "badges": [
+    "v1.5.2",
+    "PyPI",
+    "Python • 100% Native"
+  ],
+  "en": {
+    "tagline": "A zero-framework multi-agent orchestration engine built from scratch.",
+    "problemLabel": "THE PROBLEM",
+    "problemBody": "Existing agent frameworks often lock engineers into rigid abstractions, opaque retry loops, and unpredictable memory states—making debugging and security governance nearly impossible at scale.",
+    "ctaRepo": "Explore GitHub Repo",
+    "ctaFlow": "Interactive Pipeline",
+    "pipelineEyebrow": "INTERACTIVE EXECUTION PIPELINE",
+    "pipelineHint": "Tap or hover any node to inspect deterministic guarantees",
+    "features": [
+      {
+        "title": "Probabilistic Turn Loops & Mixture-of-Agents",
+        "desc": "Native execution loop supporting three distinct MoA collaboration modes without hidden middleware overhead or opaque retry chains."
+      },
+      {
+        "title": "Markdown Graph Memory",
+        "desc": "Human-readable, inspectable graph-based memory architecture—eliminating black-box vector state drift and enabling Git-diffable state audits."
+      },
+      {
+        "title": "Chain-of-Verification (CoV) Guardians",
+        "desc": "Built-in verification layers to cross-examine intermediate reasoning, catch hallucinations, and enforce output integrity before downstream execution."
+      },
+      {
+        "title": "Protocol & Provider Agnostic",
+        "desc": "Native MCP (Model Context Protocol) bridging paired with multi-provider BYOK routing so engineering teams never face vendor lock-in."
+      }
+    ]
+  },
+  "id": {
+    "tagline": "Mesin orkestrasi multi-agent tanpa framework yang dibangun dari nol.",
+    "problemLabel": "MASALAH UTAMA",
+    "problemBody": "Framework agent yang ada sering mengunci engineer pada abstraksi kaku, loop retry yang buram, dan state memori yang tidak terprediksi—membuat debugging serta tata kelola keamanan sangat sulit pada skala produksi.",
+    "ctaRepo": "Buka GitHub Repo",
+    "ctaFlow": "Pipeline Interaktif",
+    "pipelineEyebrow": "PIPELINE EKSEKUSI INTERAKTIF",
+    "pipelineHint": "Sentuh atau arahkan kursor ke tiap node untuk melihat jaminan deterministiknya",
+    "features": [
+      {
+        "title": "Probabilistic Turn Loops & Mixture-of-Agents",
+        "desc": "Loop eksekusi native yang mendukung tiga mode kolaborasi MoA berbeda tanpa overhead middleware tersembunyi."
+      },
+      {
+        "title": "Markdown Graph Memory",
+        "desc": "Arsitektur memori berbasis graph yang mudah dibaca dan diaudit manusia—menghilangkan drift state vector kotak hitam."
+      },
+      {
+        "title": "Chain-of-Verification (CoV) Guardians",
+        "desc": "Lapisan verifikasi bawaan untuk menguji silang penalaran, menangkap halusinasi, dan menjaga integritas output sebelum eksekusi lanjutan."
+      },
+      {
+        "title": "Agnostik Protokol & Provider",
+        "desc": "Bridging MCP (Model Context Protocol) secara native yang dipadukan dengan routing BYOK multi-provider tanpa vendor lock-in."
+      }
+    ]
+  },
+  "featureMeta": [
+    {
+      "code": "ORCHESTRATION",
+      "footer": "3 MoA Modes • Native Loop"
+    },
+    {
+      "code": "MEMORY GRAPH",
+      "footer": "Inspectable Graph • Zero Drift"
+    },
+    {
+      "code": "VERIFICATION",
+      "footer": "Output Integrity • Runtime Guard"
+    },
+    {
+      "code": "INTEROPERABILITY",
+      "footer": "Native MCP • Multi-Provider BYOK"
+    }
+  ],
+  "pipelineOrder": [
+    "input",
+    "router",
+    "moa",
+    "cov",
+    "memory"
+  ],
+  "pipelineNodes": [
+    {
+      "key": "input",
+      "num": "01",
+      "label": "User Input"
+    },
+    {
+      "key": "router",
+      "num": "02",
+      "label": "BYOK Router"
+    },
+    {
+      "key": "moa",
+      "num": "03",
+      "label": "MoA Turn Loop"
+    },
+    {
+      "key": "cov",
+      "num": "04",
+      "label": "CoV Guardian"
+    },
+    {
+      "key": "memory",
+      "num": "05",
+      "label": "MD Graph Mem"
+    }
+  ],
+  "pipeline": {
+    "input": {
+      "en": {
+        "title": "STAGE 01 // USER INPUT & BOUNDARY INGESTION",
+        "badge": "DETERMINISTIC GATE",
+        "desc": "Validates incoming payloads, enforces strict schema budgets, and isolates untrusted prompt context before entering the execution runtime.",
+        "contract": "contract: sanitize(payload) -> TokenBudget & ExecutionContext"
+      },
+      "id": {
+        "title": "TAHAP 01 // INGESTI INPUT & BATAS KEAMANAN",
+        "badge": "GERBANG DETERMINISTIK",
+        "desc": "Memvalidasi payload masuk, menegakkan batas skema dan token secara ketat, serta mengisolasi konteks prompt tak tepercaya sebelum masuk ke runtime.",
+        "contract": "contract: sanitize(payload) -> TokenBudget & ExecutionContext"
+      }
+    },
+    "router": {
+      "en": {
+        "title": "STAGE 02 // MULTI-PROVIDER BYOK ROUTER",
+        "badge": "ZERO LOCK-IN",
+        "desc": "Routes tasks across OpenAI, Anthropic, Gemini, or local inference endpoints using capability tiers and fallback policies without external SDK bloat.",
+        "contract": "route(task_profile) -> ProviderAdapter(timeout, retry_cap=2)"
+      },
+      "id": {
+        "title": "TAHAP 02 // ROUTER BYOK MULTI-PROVIDER",
+        "badge": "BEBAS VENDOR LOCK-IN",
+        "desc": "Mengarahkan tugas ke endpoint OpenAI, Anthropic, Gemini, atau model lokal berdasarkan profil kapabilitas dan kebijakan fallback tanpa SDK berat.",
+        "contract": "route(task_profile) -> ProviderAdapter(timeout, retry_cap=2)"
+      }
+    },
+    "moa": {
+      "en": {
+        "title": "STAGE 03 // PROBABILISTIC TURN LOOP & MoA ENGINE",
+        "badge": "3 MoA MODES",
+        "desc": "Native Python turn loop orchestrating Mixture-of-Agents collaboration (sequential, parallel synthesis, or adversarial critique) with transparent state.",
+        "contract": "loop.execute(agents, mode=\"synthesis\") -> CandidateTrace[]"
+      },
+      "id": {
+        "title": "TAHAP 03 // TURN LOOP PROBABILISTIK & MESIN MoA",
+        "badge": "3 MODE MoA",
+        "desc": "Turn loop Python native yang mengorkestrasi kolaborasi Mixture-of-Agents (sekuensial, sintesis paralel, atau kritik adversarial) dengan state transparan.",
+        "contract": "loop.execute(agents, mode=\"synthesis\") -> CandidateTrace[]"
+      }
+    },
+    "cov": {
+      "en": {
+        "title": "STAGE 04 // CHAIN-OF-VERIFICATION (CoV) GUARDIAN",
+        "badge": "INTEGRITY CHECK",
+        "desc": "Cross-examines claims, tool invocations, and schema invariants independently before any output is persisted or executed downstream.",
+        "contract": "guardian.verify(trace) -> VerifiedOutput | QuarantineError"
+      },
+      "id": {
+        "title": "TAHAP 04 // PENJAGA CHAIN-OF-VERIFICATION (CoV)",
+        "badge": "UJI INTEGRITAS",
+        "desc": "Menguji silang klaim, pemanggilan tool, dan invarian skema secara independen sebelum output disimpan atau dieksekusi ke sistem hilir.",
+        "contract": "guardian.verify(trace) -> VerifiedOutput | QuarantineError"
+      }
+    },
+    "memory": {
+      "en": {
+        "title": "STAGE 05 // MARKDOWN GRAPH MEMORY COMMIT",
+        "badge": "AUDITABLE STATE",
+        "desc": "Persists relational agent knowledge into human-readable, Git-diffable Markdown graph nodes—eliminating opaque vector drift.",
+        "contract": "md_graph.commit(node_id, edges, checksum) -> ImmutableSnapshot"
+      },
+      "id": {
+        "title": "TAHAP 05 // KOMIT MARKDOWN GRAPH MEMORY",
+        "badge": "STATE TER-AUDIT",
+        "desc": "Menyimpan pengetahuan relasional agent ke node graph Markdown yang mudah dibaca manusia dan bisa di-diff via Git—menghilangkan drift vektor kotak hitam.",
+        "contract": "md_graph.commit(node_id, edges, checksum) -> ImmutableSnapshot"
+      }
+    }
+  }
+}

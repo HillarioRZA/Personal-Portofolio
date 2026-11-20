@@ -1,0 +1,74 @@
+{
+  "name": "Reza Pratama",
+  "brand": "REZA PRATAMA",
+  "roles": {
+    "en": [
+      "AI SYSTEMS ENGINEER",
+      "MULTI-AGENT ARCHITECT",
+      "DATA & BACKEND SYSTEMS",
+      "NATIVE AI ENGINEER"
+    ],
+    "id": [
+      "AI SYSTEMS ENGINEER",
+      "ARSITEK MULTI-AGENT",
+      "REKAYASA DATA & BACKEND",
+      "AI ENGINEER NATIVE"
+    ]
+  },
+  "email": "hello@rezapratama.dev",
+  "github": "https://github.com/HillarioRZA",
+  "githubLabel": "GitHub / HillarioRZA",
+  "linkedin": "https://linkedin.com",
+  "footerLeft": "© 2026 Reza Pratama // AI Systems Engineer",
+  "footerRight": "THREE.JS NEURAL CORE • GSAP • LENIS",
+  "nav": [
+    {
+      "href": "#hero",
+      "key": "nav.identity",
+      "cursor": {
+        "en": "Profile",
+        "id": "Profil"
+      }
+    },
+    {
+      "href": "#approach",
+      "key": "nav.approach",
+      "cursor": {
+        "en": "Approach",
+        "id": "Prinsip"
+      }
+    },
+    {
+      "href": "#astraea",
+      "key": "nav.astraea",
+      "cursor": {
+        "en": "Inspect",
+        "id": "Bedah"
+      }
+    },
+    {
+      "href": "#systems",
+      "key": "nav.systems",
+      "cursor": {
+        "en": "Systems",
+        "id": "Sistem"
+      }
+    },
+    {
+      "href": "#capabilities",
+      "key": "nav.stack",
+      "cursor": {
+        "en": "Matrix",
+        "id": "Keahlian"
+      }
+    },
+    {
+      "href": "#contact",
+      "key": "nav.contact",
+      "cursor": {
+        "en": "Initiate",
+        "id": "Kontak"
+      }
+    }
+  ]
+}
