@@ -10,9 +10,11 @@ interface Props {
 }
 
 /**
- * Slide-over Architecture Brief. Closes on ESC, backdrop click, or the close
- * button. While open, body scroll is locked and Lenis is paused through the
- * window event the shell listens to.
+ * Centered popup Architecture Brief. Closes on ESC, backdrop click, or the
+ * close button. While open, body scroll is locked and Lenis is paused through
+ * the window event the shell listens to. The panel carries data-lenis-prevent
+ * so its own overflow scroll keeps working (wheel and touch) while Lenis is
+ * stopped; without it Lenis swallows scroll gestures over the panel.
  */
 export default function CaseStudyModal({ system, onClose }: Props) {
   const { lang, t } = useLanguage();
@@ -37,7 +39,7 @@ export default function CaseStudyModal({ system, onClose }: Props) {
   return (
     <div
       id="case-modal"
-      className={`fixed inset-0 z-[80] flex justify-end transition-opacity duration-300 ${
+      className={`fixed inset-0 z-[80] flex items-center justify-center p-4 sm:p-6 transition-opacity duration-300 ${
         isOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
       }`}
       aria-hidden={!isOpen}
@@ -52,8 +54,9 @@ export default function CaseStudyModal({ system, onClose }: Props) {
 
       <div
         id="case-modal-panel"
-        className={`relative z-10 w-full max-w-2xl h-full bg-[#060810] text-[#F4F4F7] border-l border-white/10 overflow-y-auto p-5 sm:p-10 flex flex-col justify-between transition-transform duration-[420ms] ease-[cubic-bezier(0.22,1,0.36,1)] ${
-          isOpen ? 'translate-x-0' : 'translate-x-full'
+        data-lenis-prevent
+        className={`relative z-10 w-full max-w-2xl max-h-[90dvh] bg-[#060810] text-[#F4F4F7] border border-white/10 rounded-2xl shadow-2xl shadow-black/60 overflow-y-auto overscroll-contain p-5 sm:p-10 flex flex-col justify-between transition-all duration-[320ms] ease-[cubic-bezier(0.22,1,0.36,1)] ${
+          isOpen ? 'opacity-100 scale-100 translate-y-0' : 'opacity-0 scale-95 translate-y-3'
         }`}
       >
         {system && copy && (
