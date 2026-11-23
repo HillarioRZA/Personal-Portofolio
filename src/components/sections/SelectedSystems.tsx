@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
+import Link from 'next/link';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useLanguage } from '@/context/LanguageContext';
@@ -137,6 +138,17 @@ export default function SelectedSystems({ systems, onOpenCase }: Props) {
                       </span>
                     ))}
                   </div>
+                  {system.simHref && (
+                    <Link
+                      href={system.simHref}
+                      data-sim-link
+                      onClick={(e) => e.stopPropagation()}
+                      className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg border border-[var(--accent)]/50 bg-[var(--accent-soft)] font-mono text-[10px] uppercase tracking-wider text-[var(--accent)] hover:bg-[var(--accent)] hover:text-[#05060A] transition-colors"
+                    >
+                      <span className="w-1.5 h-1.5 rounded-full bg-current animate-pulse" />
+                      {t('modal.openSimulation')}
+                    </Link>
+                  )}
                   <div className="flex items-center justify-between font-mono text-xs uppercase tracking-wider text-[var(--fg)] group-hover:text-[var(--accent)] transition-colors">
                     <span>{t('systems.openBrief')}</span>
                     <span className="transform group-hover:translate-x-1.5 transition-transform">→</span>

@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useEffect } from 'react';
+import Link from 'next/link';
 import { useLanguage } from '@/context/LanguageContext';
 import type { SystemEntry } from '@/lib/types';
 
@@ -147,6 +148,20 @@ export default function CaseStudyModal({ system, onClose }: Props) {
                 </div>
               </div>
             </div>
+
+            {system.simHref && (
+              <div className="mt-8">
+                <Link
+                  href={system.simHref}
+                  id="modal-sim-cta"
+                  className="flex items-center justify-center gap-2.5 w-full px-5 py-3.5 rounded-xl bg-[#38BDF8] text-[#05060A] font-mono text-sm font-bold uppercase tracking-wider hover:bg-[#7DD3FC] transition-colors"
+                >
+                  <span className="w-2 h-2 rounded-full bg-[#05060A] animate-pulse" />
+                  {t('modal.openSimulation')}
+                  <span>→</span>
+                </Link>
+              </div>
+            )}
 
             <div className="pt-7 mt-8 border-t border-white/10 flex flex-wrap items-center justify-between gap-2 font-mono text-[11px] text-zinc-500">
               <span>REZA PRATAMA // ARCH AUDIT</span>

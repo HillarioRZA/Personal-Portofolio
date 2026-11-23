@@ -105,6 +105,8 @@ export interface SystemEntry extends Localized<SystemCopy> {
   title: string;
   stack: string[];
   cardTags: string[];
+  /** Optional route to a live interactive simulation (e.g. /adam). */
+  simHref?: string;
 }
 
 export interface PortfolioContent {

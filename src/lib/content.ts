@@ -111,6 +111,7 @@ const systemSchema = z.object({
   title: z.string(),
   stack: z.array(z.string()),
   cardTags: z.array(z.string()),
+  simHref: z.string().optional(),
   en: systemCopy,
   id: systemCopy,
 });

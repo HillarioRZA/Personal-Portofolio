@@ -65,7 +65,8 @@
     "contact.copyEmail": "Copy Email",
     "toast.copied": "Email copied: rezapratama1912@gmail.com",
     "modal.decisionsHeading": "KEY ARCHITECTURE DECISIONS",
-    "modal.auditHeading": "SECURITY & EMPIRICAL AUDIT"
+    "modal.auditHeading": "SECURITY & EMPIRICAL AUDIT",
+    "modal.openSimulation": "Open Live Simulation"
   },
   "id": {
     "nav.identity": "Profil",
@@ -133,6 +134,7 @@
     "contact.copyEmail": "Salin Email",
     "toast.copied": "Email disalin: rezapratama1912@gmail.com",
     "modal.decisionsHeading": "KEPUTUSAN ARSITEKTUR KUNCI",
-    "modal.auditHeading": "AUDIT KEAMANAN & EMPIRIS"
+    "modal.auditHeading": "AUDIT KEAMANAN & EMPIRIS",
+    "modal.openSimulation": "Buka Simulasi Live"
   }
 }
