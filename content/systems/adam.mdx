@@ -9,31 +9,32 @@ title: Adam
 simHref: /adam
 stack:
   - Rust
-  - adam-runtime
-  - adam-cerebrum
-  - adam-limbic
+  - Python (PyO3)
+  - TypeScript (NAPI-RS)
   - SQLite WAL
   - SHA-256 SoulSpec
 cardTags:
   - Rust
-  - Biomimetic Brain
-  - Single Agent
+  - Python
+  - TypeScript
   - SoulSpec
 en:
   status: BIOMIMETIC DIGITAL BRAIN • v1.0.0
   cardDesc: >-
-    A biomimetic digital brain engineered in Rust with EosADK: six crates
-    mirroring real neuroanatomy, from brainstem reflex arcs to a cerebral
-    cortex. The LLM is only a replaceable cortex; identity, memory, and affect
-    live in deterministic Rust organs underneath it.
+    A biomimetic digital brain written purely in Rust: six crates mirroring
+    real neuroanatomy, from brainstem reflex arcs to a cerebral cortex. The
+    LLM is only a replaceable cortex; identity, memory, and affect live in
+    deterministic Rust organs underneath it, callable from Rust, Python, and
+    TypeScript.
   cardNote: >-
     Subcortical reflex path answers in under 5 ms at zero LLM tokens, while the
     SoulSpec identity core stays sealed under SHA-256.
   summary: >-
-    A single-agent biomimetic brain built with EosADK in Rust across six
-    crates, where the LLM serves as a swappable cortex behind a provider
-    interface and every subcortical function (reflex, affect, memory, sleep)
-    runs as deterministic native code.
+    A single-agent biomimetic brain built entirely in Rust across six crates,
+    where the LLM serves as a swappable cortex behind a provider interface
+    and every subcortical function (reflex, affect, memory, sleep) runs as
+    deterministic native code. Host applications call the brain natively in
+    Rust, or from Python and TypeScript through FFI bindings.
   decisions:
     - >-
       Split the brain into six crates mapped to anatomy (adam-protocol,
@@ -55,18 +56,21 @@ en:
 id:
   status: OTAK DIGITAL BIOMIMETIK • v1.0.0
   cardDesc: >-
-    Otak digital biomimetik yang dibangun dengan Rust dan EosADK: enam crate
-    yang mencerminkan neuroanatomi nyata, dari busur refleks batang otak
-    hingga korteks serebral. LLM hanyalah korteks yang bisa diganti; identitas,
-    memori, dan afek hidup di organ Rust deterministik di bawahnya.
+    Otak digital biomimetik yang ditulis murni dalam Rust: enam crate yang
+    mencerminkan neuroanatomi nyata, dari busur refleks batang otak hingga
+    korteks serebral. LLM hanyalah korteks yang bisa diganti; identitas,
+    memori, dan afek hidup di organ Rust deterministik di bawahnya, dan dapat
+    dipanggil dari Rust, Python, dan TypeScript.
   cardNote: >-
     Jalur refleks subkortikal menjawab dalam waktu kurang dari 5 ms dengan nol
     token LLM, sementara inti identitas SoulSpec tetap tersegel SHA-256.
   summary: >-
-    Otak biomimetik agent tunggal yang dibangun dengan EosADK dalam Rust
-    melalui enam crate, dengan LLM sebagai korteks yang dapat ditukar di balik
+    Otak biomimetik agent tunggal yang dibangun sepenuhnya dalam Rust melalui
+    enam crate, dengan LLM sebagai korteks yang dapat ditukar di balik
     antarmuka provider dan seluruh fungsi subkortikal (refleks, afek, memori,
-    tidur) berjalan sebagai kode native deterministik.
+    tidur) berjalan sebagai kode native deterministik. Aplikasi host memanggil
+    otak ini secara native di Rust, atau dari Python dan TypeScript melalui
+    binding FFI.
   decisions:
     - >-
       Membagi otak menjadi enam crate yang dipetakan ke anatomi
